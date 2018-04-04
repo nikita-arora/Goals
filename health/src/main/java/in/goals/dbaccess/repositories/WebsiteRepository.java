@@ -10,6 +10,10 @@ import in.goals.dbaccess.model.WebsiteDAO;
 @Repository
 public interface WebsiteRepository extends JpaRepository<WebsiteDAO, Integer> {
 
+	WebsiteDAO findById(Integer id);
+
+	WebsiteDAO findByNameOrUrl(String name, String url);
+
 	List<WebsiteDAO> findByActiveTrue();
 
 }
