@@ -1,6 +1,8 @@
 package in.goals.service;
 
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -27,5 +29,16 @@ public class WebsiteHealthService {
 
 		cal.add(Calendar.DATE, -7);
 		Date startDate = new Date(cal.getTimeInMillis());
+
+		List<WebsiteHealthDAO> healthList = websiteHealthRepository
+				.findByWebsite_ActiveTrueAndCreatedAtBetween(startDate, today);
+
+		Collections.sort(healthList, new Comparator<WebsiteHealthDAO>() {
+			public int compare(WebsiteHealthDAO h1, WebsiteHealthDAO h2) {
+				return h1.getCreatedAt().compareTo(h2.getCreatedAt());
+			}
+		});
+
+		return healthList;
 	}
 }
