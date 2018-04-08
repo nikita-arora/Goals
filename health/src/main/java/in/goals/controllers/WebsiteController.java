@@ -71,7 +71,7 @@ public class WebsiteController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<GetAllWebsitesResponse> getQuizzes() {
+	public ResponseEntity<GetAllWebsitesResponse> getWebsites() {
 		GetAllWebsitesResponse res = new GetAllWebsitesResponse();
 		try {
 			List<WebsiteDAO> websites = websiteService.getAllActiveWebsites();

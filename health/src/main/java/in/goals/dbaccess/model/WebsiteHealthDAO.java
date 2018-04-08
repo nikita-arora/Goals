@@ -3,6 +3,7 @@ package in.goals.dbaccess.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,7 +39,7 @@ public class WebsiteHealthDAO implements Serializable {
 
 	@NotNull
 	@JsonProperty("website")
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.MERGE })
 	@JoinColumn(name = "website_id", nullable = false)
 	private WebsiteDAO website;
 

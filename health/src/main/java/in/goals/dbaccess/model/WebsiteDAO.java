@@ -57,6 +57,10 @@ public class WebsiteDAO implements Serializable {
 		this.id = id;
 	}
 
+	public WebsiteDAO(String name) {
+		this.name = name;
+	}
+
 	@PrePersist
 	void onCreate() {
 		this.setCreatedAt(new Date());

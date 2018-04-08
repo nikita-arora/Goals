@@ -8,6 +8,6 @@ public class GoalsUrl {
 
 	public static final String WEBSITE_URL = BASE_URL + VERSION + "/websites";
 
-	public static final String HEALTH_URL = BASE_URL + VERSION + "health";
+	public static final String HEALTH_URL = BASE_URL + VERSION + "/health";
 
 }
